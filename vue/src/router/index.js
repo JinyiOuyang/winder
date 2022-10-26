@@ -83,6 +83,22 @@ const routes = [
     name: 'Register',
     component: () => import('../views/Register.vue')
   },
+  {
+    path: '/profileedit',
+    name: 'ProfileEdit',
+    component: () => import('../views/ProfileEdit.vue')
+  },
+  {
+
+    path: '/findworkoutpartner',
+    name: 'FindWorkoutPartner',
+    component: () => import('../views/FindWorkoutPartner.vue')
+  },
+  {
+    path: '/findgroupactivity',
+    name: 'FindGroupActivity',
+    component: () => import('../views/FindGroupActivity.vue')
+  },
 ]
 
 const router = createRouter({
@@ -90,7 +106,6 @@ const router = createRouter({
   routes: routes,
 })
 
-/**
- * 输出对象
- */
+
+
 export default router;
