@@ -99,6 +99,7 @@ const routes = [
     name: 'FindGroupActivity',
     component: () => import('../views/FindGroupActivity.vue')
   },
+
 ]
 
 const router = createRouter({
