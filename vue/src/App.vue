@@ -1,7 +1,8 @@
 <script setup>
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-// import "./style.css";
+import "./style.css";
+
 </script>
 
 <template>
@@ -13,7 +14,9 @@ import AppFooter from './components/AppFooter.vue';
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Monda');
+
+@import url("https://fonts.googleapis.com/css?family=Monda");
+
 a,
 a:visited,
 a:hover,

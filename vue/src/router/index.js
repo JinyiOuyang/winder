@@ -79,9 +79,15 @@ const routes = [
     component: () => import('../views/ProfileEdit.vue')
   },
   {
-    path: '/findwourkoutpartner',
+
+    path: '/findworkoutpartner',
     name: 'FindWorkoutPartner',
     component: () => import('../views/FindWorkoutPartner.vue')
+  },
+  {
+    path: '/findgroupactivity',
+    name: 'FindGroupActivity',
+    component: () => import('../views/FindGroupActivity.vue')
   },
 ]
 
@@ -90,7 +96,5 @@ const router = createRouter({
   routes: routes,
 })
 
-/**
- * 输出对象
- */
+
 export default router;
