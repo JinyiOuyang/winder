@@ -41,6 +41,7 @@ if(localStorage.getItem("username")==null){
   background-color: var(--el-color-primary-light-7);
   color: var(--el-text-color-primary);
   --el-header-height: fit-content(20em);
+  padding: 0;
 }
 .layout-container .el-aside {
   color: var(--el-text-color-primary);
