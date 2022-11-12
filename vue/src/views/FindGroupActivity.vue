@@ -35,31 +35,62 @@ export default {
   methods: {
     //use fecth api to replace them
     getAnime() {
-      // const anime_titles = [
-      //   "Group 1",
-      //   "Group 2",
-      //   "Group 3",
-      //   "Group 4",
-      //   "Group 5",
-      //   "Group 6",
-      //   "Group 7",
-      //   "Group 8",
-      //   "Group 9",
-      //   "Group 10",
-      //   "Group 11",
-      //   "Group 12",
-      // ];
-      // const anime = [];
-      // for (let i = 0; i < 10; i++) {
-      //   anime.push({
-      //     title: anime_titles[
-      //         Math.floor(Math.random() * anime_titles.length)
-      //         ],
-      //     description:
-      //         "Sport: Tennis, Experience: Intermediate, Group size: 8",
-      //   });
-      // }
-
+      const anime_titles = [
+        "Group 1",
+        "Group 2",
+        "Group 3",
+        "Group 4",
+        "Group 5",
+      ];
+      const anime_sport = [
+        "Hiking",
+        "Biking",
+        "Basketball",
+        "Badminton",
+        "Running",
+      ];
+      const anime_exp = [
+        "beginner",
+        "intermediate",
+        "intermediate",
+        "professional",
+        "beginner",
+      ];
+      const anime_size = [
+        5,
+        4,
+        10,
+        2,
+        8,
+      ];
+      const anime_time = [
+        "2022-12-20 08:00 (EST)",
+        "2022-12-05 13:00 (EST)",
+        "2022-12-01 10:00 (EST)",
+        "2022-11-20 17:00 (EST)",
+        "2022-11-25 15:00 (EST)",
+      ];
+      const anime_location = [
+        "Blacksburg, VA, 22030",
+        "College Park, MD, 15641",
+        "Falls Church, VA, 45268",
+        "Washington, D.C., 22654",
+        "Arlington, VA, 20350",
+      ];
+      const anime_createdBy = [
+        "User 4",
+        "User 8",
+        "User 2",
+        "User 5",
+        "User 7",
+      ];
+      const anime_ids = [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+      ];
       const anime = [];
       for (let i = 0; i < 1; i++ ){
         if(state.tableData){
