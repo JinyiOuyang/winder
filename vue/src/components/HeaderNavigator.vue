@@ -1,15 +1,9 @@
 <template>
   <div class="navigator">
-<<<<<<< HEAD
     <router-link class="nav-link" to="/" index = "/">Home</router-link> |
     <router-link class="nav-link" to="/profile" index = "/profile">Profile</router-link> |
     <router-link class="nav-link" to="/findworkoutpartner" index = "/findworkoutpartner">Workout Partner</router-link> |
     <router-link class="nav-link" to="/findgroupactivity" index = "/findgroupactivity">Group Activity</router-link> |
-=======
-    <router-link class="nav-link" to="/">Home</router-link> |
-    <router-link class="nav-link" to="/findworkoutpartner">Workout Partner</router-link> |
-    <router-link class="nav-link" to="/findgroupactivity">Group Activity</router-link> |
->>>>>>> 310f3ee312ed30d61b1eac5e289be77487db2fb1
     <router-link class="nav-link" to="/">How To</router-link>
   </div>
 </template>
