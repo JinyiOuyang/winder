@@ -6,7 +6,7 @@
 
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
-        <Header></Header>
+        <AppHeader></AppHeader>
       </el-header>
 
       <el-main>
@@ -23,7 +23,8 @@
 import {reactive} from "vue";
 import router from "../router/index.js";
 import SideNavigator from "../components/SideNavigator.vue";
-import Header from "../components/Header.vue";
+// import HeaderNavigator from "../components/HeaderNavigator.vue";
+import AppHeader from "../components/AppHeader.vue";
 
 const state = reactive({
   tableData: []
@@ -39,6 +40,7 @@ if(localStorage.getItem("username")==null){
   position: relative;
   background-color: var(--el-color-primary-light-7);
   color: var(--el-text-color-primary);
+  --el-header-height: fit-content(20em);
 }
 .layout-container .el-aside {
   color: var(--el-text-color-primary);

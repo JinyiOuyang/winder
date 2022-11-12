@@ -1,51 +1,53 @@
 <template>
-Message Received
+  <div class="user-scroll-panel">
+    <div style="margin-bottom: 20px">
+      <el-input style="width: 260px; margin-right: 10px" v-model="sportid" placeholder="Sportid" clearable></el-input>
+      <el-button type="primary" @click="find"><el-icon style="margin-right: 3px"><Search /></el-icon> Find</el-button>
+    </div>
+    <main >
+      <PostGroup v-for="(anime, i) in anime_list" :key="i" :anime="anime" />
+    </main>
+  </div>
 </template>
 
-
 <script>
-
-import PostPartner from "./PostPartner.vue";
-import { Search } from '@element-plus/icons-vue'
+import PostGroup from "./PostGroup.vue";
 import {reactive, ref} from "vue";
 import request from "../request";
 import {ElNotification} from "element-plus";
-import { getCurrentInstance } from 'vue';
 
-const sex = ref('')
-const ageLower = ref('')
-const ageUpper = ref('')
+const sportid = ref('')
 
 const state = reactive({
   tableDate: []
 })
 
 export default {
-  name: "FindWorkoutPartner",
-  data() {
+  name: "FindGroupActivity",
+  data () {
     return {
       anime_list: []
     }
   },
   components: {
-    PostPartner,
+    PostGroup,
   },
   methods: {
     //use fecth api to replace them
     getAnime() {
       // const anime_titles = [
-      //   "User 1",
-      //   "User 2",
-      //   "User 3",
-      //   "User 4",
-      //   "User 5",
-      //   "User 6",
-      //   "User 7",
-      //   "User 8",
-      //   "User 9",
-      //   "User 10",
-      //   "User 11",
-      //   "User 12",
+      //   "Group 1",
+      //   "Group 2",
+      //   "Group 3",
+      //   "Group 4",
+      //   "Group 5",
+      //   "Group 6",
+      //   "Group 7",
+      //   "Group 8",
+      //   "Group 9",
+      //   "Group 10",
+      //   "Group 11",
+      //   "Group 12",
       // ];
       // const anime = [];
       // for (let i = 0; i < 10; i++) {
@@ -54,21 +56,23 @@ export default {
       //         Math.floor(Math.random() * anime_titles.length)
       //         ],
       //     description:
-      //         "Alex Coolkid, 23 Blacksburg, VA",
+      //         "Sport: Tennis, Experience: Intermediate, Group size: 8",
       //   });
       // }
+
       const anime = [];
       for (let i = 0; i < 1; i++ ){
         if(state.tableData){
           anime.push({
             title: state.tableData[i].id,
-            description: state.tableData[i].username
+            description: state.tableData[i].time
           })
         }
 
       }
 
       return anime;
+
     },
     handleScroll() {
       if (
@@ -79,14 +83,11 @@ export default {
         this.anime_list = [...this.anime_list, ...new_anime];
       }
     },
-
-    match() {
-      request.get("/user/match", {
+    find() {
+      request.get("/event/find", {
         params: {
-          userId: localStorage.getItem('userid'),
-          sex: sex.value,
-          ageLower: ageLower.value,
-          ageUpper: ageUpper.value
+          userid: localStorage.getItem('userid'),
+          sportid: sportid.value
         }
       })
           .then(res => {
@@ -98,24 +99,24 @@ export default {
           })
     },
 
-    add(index) {
-      request.get('/userrelation/relation/'+localStorage.getItem("userid")).then(res => {
-        let userRelation = res
+    add(index){
+      request.get('/event/'+state.tableData[index].id).then(res => {
+        let event = res
 
-        if(userRelation.mateid.length>0) {
-          userRelation.mateid += ","
-          userRelation.mateid += state.tableData[index].id
+        if(event.participantid.length>0) {
+          event.participantid += ","
+          event.participantid += localStorage.getItem("userid")
         }else{
-          userRelation.mateid += state.tableData[index].id
+          event.participantid += localStorage.getItem("userid")
         }
 
-        request.post('/userrelation/update', userRelation).then(res => {
+        request.post('/event/update', event).then(res => {
           if (res.code === '200') {
             ElNotification({
               type: 'success',
-              message: 'Match Success'
+              message: 'Join Success'
             })
-            match()
+            find()
           } else {
             ElNotification({
               type: 'error',
@@ -124,26 +125,16 @@ export default {
           }
         })
       })
-    }
-
-
-
+    },
   },
+
+
   mounted() {
     this.anime_list = this.getAnime();
     window.addEventListener("scroll", this.handleScroll);
   },
 };
-
-<<<<<<< HEAD:vue/src/views/MessageReceived.vue
-=======
-
-
-
-
->>>>>>> combine front end with backend:vue/src/views/FindWorkoutPartner.vue
 </script>
-
 
 <style scoped>
 .user-scroll-panel {
@@ -152,11 +143,9 @@ export default {
   min-height: 100vh;
   padding-top: 3rem;
 }
-
-main {
+main{
   pading: 0 2rem;
   max-width: 640px;
   margin: 0 auto;
-
 }
 </style>

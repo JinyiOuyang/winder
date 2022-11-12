@@ -3,11 +3,14 @@ import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import "./style.css";
 
-
 </script>
 
 <template>
-  <router-view />
+  <div id="app" >
+<!--    <app-header></app-header>-->
+    <router-view></router-view>
+    <app-footer></app-footer>
+  </div>
 </template>
 
 <style>
@@ -26,4 +29,3 @@ body{
 
 }
 </style>
-
