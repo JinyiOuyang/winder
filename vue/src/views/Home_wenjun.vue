@@ -104,7 +104,7 @@ request.get('/experience/new-sport/' + localStorage.getItem("userid")).then(res 
   state.sport_options = res
 })
 
-request.get('/experience/user-experience/' + localStorage.getItem("userid")).then(res => {
+request.get('/experience/user-experience/' + "4").then(res => {
   state.userTableData = res
 })
 
