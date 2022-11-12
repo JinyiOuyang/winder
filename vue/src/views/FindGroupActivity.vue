@@ -35,31 +35,6 @@ export default {
   methods: {
     //use fecth api to replace them
     getAnime() {
-      // const anime_titles = [
-      //   "Group 1",
-      //   "Group 2",
-      //   "Group 3",
-      //   "Group 4",
-      //   "Group 5",
-      //   "Group 6",
-      //   "Group 7",
-      //   "Group 8",
-      //   "Group 9",
-      //   "Group 10",
-      //   "Group 11",
-      //   "Group 12",
-      // ];
-      // const anime = [];
-      // for (let i = 0; i < 10; i++) {
-      //   anime.push({
-      //     title: anime_titles[
-      //         Math.floor(Math.random() * anime_titles.length)
-      //         ],
-      //     description:
-      //         "Sport: Tennis, Experience: Intermediate, Group size: 8",
-      //   });
-      // }
-
       const anime_titles = [
         "Group 1",
         "Group 2",
