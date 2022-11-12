@@ -61,6 +61,22 @@ const routes = [
         name: 'YourEventJoined',
         component: () => import('../views/YourEventJoined.vue')
       },
+      {
+        path: '/profile',
+        name: 'Profile',
+        component: () => import('../views/Profile.vue')
+      },
+      {
+
+        path: '/findworkoutpartner',
+        name: 'FindWorkoutPartner',
+        component: () => import('../views/FindWorkoutPartner.vue')
+      },
+      {
+        path: '/findgroupactivity',
+        name: 'FindGroupActivity',
+        component: () => import('../views/FindGroupActivity.vue')
+      },
     ]
   },
   {
@@ -78,17 +94,23 @@ const routes = [
     name: 'ProfileEdit',
     component: () => import('../views/ProfileEdit.vue')
   },
-  {
+  // {
+  //
+  //   path: '/findworkoutpartner',
+  //   name: 'FindWorkoutPartner',
+  //   component: () => import('../views/FindWorkoutPartner.vue')
+  // },
+  // {
+  //   path: '/findgroupactivity',
+  //   name: 'FindGroupActivity',
+  //   component: () => import('../views/FindGroupActivity.vue')
+  // },
+  // {
+  //   path: '/profile',
+  //   name: 'Profile',
+  //   component: () => import('../views/Profile.vue')
+  // },
 
-    path: '/findworkoutpartner',
-    name: 'FindWorkoutPartner',
-    component: () => import('../views/FindWorkoutPartner.vue')
-  },
-  {
-    path: '/findgroupactivity',
-    name: 'FindGroupActivity',
-    component: () => import('../views/FindGroupActivity.vue')
-  },
 
 ]
 
