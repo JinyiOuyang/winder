@@ -1,5 +1,5 @@
 <template>
-  <div class="user-scroll-panel">
+  <div class="group-scroll-panel">
     <div style="margin-bottom: 20px">
       <el-input style="width: 260px; margin-right: 10px" v-model="sportid" placeholder="Sportid" clearable></el-input>
       <el-button type="primary" @click="find"><el-icon style="margin-right: 3px"><Search /></el-icon> Find</el-button>
@@ -72,7 +72,6 @@ export default {
       }
 
       return anime;
-
     },
     handleScroll() {
       if (
@@ -128,7 +127,6 @@ export default {
     },
   },
 
-
   mounted() {
     this.anime_list = this.getAnime();
     window.addEventListener("scroll", this.handleScroll);
@@ -137,15 +135,18 @@ export default {
 </script>
 
 <style scoped>
-.user-scroll-panel {
+
+.group-scroll-panel {
   box-sizing: border-box;
+  min-height: 120vh;
   /*background-color: #2c3e50;*/
-  min-height: 100vh;
   padding-top: 3rem;
 }
+
 main{
-  pading: 0 2rem;
-  max-width: 640px;
-  margin: 0 auto;
+  background-color: lightgray;
+  width: 565px;
+  margin: 2rem auto;
+  border-radius: 2rem;
 }
 </style>
