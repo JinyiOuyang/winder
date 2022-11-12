@@ -9,7 +9,7 @@ const routes = [
       {
         path: '',
         name: 'Home',
-        component: () => import('../views/Home.vue')
+        component: () => import('../views/Home_wenjun.vue')
       },
       {
         path: '/profileedit',

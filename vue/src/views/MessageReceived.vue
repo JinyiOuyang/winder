@@ -3,6 +3,8 @@ Message Received
 </template>
 
 
+
+
 <script>
 
 import PostPartner from "./PostPartner.vue";
@@ -32,6 +34,21 @@ export default {
   },
   methods: {
     //use fecth api to replace them
+    match() {
+      request.get("/user/match", {
+        params: {
+          userId: localStorage.getItem('userid'),
+          sex: sex.value,
+          ageLower: ageLower.value,
+          ageUpper: ageUpper.value
+        }
+      })
+          .then(res => {
+            state.tableData = res;
+            // this.getAnime();
+            this.$forceUpdate()
+          })
+    },
     getAnime() {
       // const anime_titles = [
       //   "User 1",
@@ -58,11 +75,34 @@ export default {
       //   });
       // }
       const anime = [];
-      for (let i = 0; i < 1; i++ ){
-        if(state.tableData){
+
+      // for (let i = 0; i < anime_titles.length; i++) {
+      //   // let userIndex = Math.floor(Math.random() * anime.title.length);
+      //   anime.push({
+      //     imgScr: anime_imgSrc[i],
+      //     title: anime_titles[i],
+      //     age: anime_ages[i],
+      //     description:
+      //         "Student",
+      //     address: anime_address[i],
+      //     id: anime_ids[i]
+      //   });
+      // }
+
+      // const anime = [];
+      // this.match();
+      if (state.tableData) {
+        this.match()
+      for (let i = 0; i < 3; i++ ) {
           anime.push({
-            title: state.tableData[i].id,
-            description: state.tableData[i].username
+            // title: state.tableData[i].id,
+            // description: state.tableData[i].username
+            imgScr: anime_imgSrc[i],
+            title: state.tableData[i].username,
+            age: state.tableData[i].age,
+            description: state.tableData[i].sex,
+            address: state.tableData[i].address,
+            id: state.tableData[i].id
           })
         }
 
@@ -80,23 +120,7 @@ export default {
       }
     },
 
-    match() {
-      request.get("/user/match", {
-        params: {
-          userId: localStorage.getItem('userid'),
-          sex: sex.value,
-          ageLower: ageLower.value,
-          ageUpper: ageUpper.value
-        }
-      })
-          .then(res => {
-            state.tableData = res;
-            this.getAnime();
-            const instance = getCurrentInstance();
-            instance.proxy.forceUpdate();
-            this.$forceUpdate()
-          })
-    },
+
 
     add(index) {
       request.get('/userrelation/relation/'+localStorage.getItem("userid")).then(res => {
