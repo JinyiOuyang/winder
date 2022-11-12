@@ -1,5 +1,5 @@
 <template>
-  <div class="user-scroll-panel">
+  <div class="group-scroll-panel">
     <div style="margin-bottom: 20px">
       <el-input style="width: 260px; margin-right: 10px" v-model="sportid" placeholder="Sportid" clearable></el-input>
       <el-button type="primary" @click="find"><el-icon style="margin-right: 3px"><Search /></el-icon> Find</el-button>
@@ -60,7 +60,77 @@ export default {
       //   });
       // }
 
+      const anime_titles = [
+        "Group 1",
+        "Group 2",
+        "Group 3",
+        "Group 4",
+        "Group 5",
+      ];
+      const anime_sport = [
+        "Hiking",
+        "Biking",
+        "Basketball",
+        "Badminton",
+        "Running",
+      ];
+      const anime_exp = [
+        "beginner",
+        "intermediate",
+        "intermediate",
+        "professional",
+        "beginner",
+      ];
+      const anime_size = [
+        5,
+        4,
+        10,
+        2,
+        8,
+      ];
+      const anime_time = [
+        "2022-12-20 08:00 (EST)",
+        "2022-12-05 13:00 (EST)",
+        "2022-12-01 10:00 (EST)",
+        "2022-11-20 17:00 (EST)",
+        "2022-11-25 15:00 (EST)",
+      ];
+      const anime_location = [
+        "Blacksburg, VA, 22030",
+        "College Park, MD, 15641",
+        "Falls Church, VA, 45268",
+        "Washington, D.C., 22654",
+        "Arlington, VA, 20350",
+      ];
+      const anime_createdBy = [
+        "User 4",
+        "User 8",
+        "User 2",
+        "User 5",
+        "User 7",
+      ];
+      const anime_ids = [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+      ];
       const anime = [];
+      for (let i = 0; i < anime_titles.length; i++) {
+        anime.push({
+          title: anime_titles[i],
+          sport: anime_sport[i],
+          experience: anime_exp[i],
+          time: anime_time[i],
+          location: anime_location[i],
+          size: anime_size[i],
+          createdBy: anime_createdBy[i],
+          id: anime_ids[i]
+        });
+      }
+
+      // const anime = [];
       for (let i = 0; i < 1; i++ ){
         if(state.tableData){
           anime.push({
@@ -72,7 +142,6 @@ export default {
       }
 
       return anime;
-
     },
     handleScroll() {
       if (
@@ -128,7 +197,6 @@ export default {
     },
   },
 
-
   mounted() {
     this.anime_list = this.getAnime();
     window.addEventListener("scroll", this.handleScroll);
@@ -137,15 +205,15 @@ export default {
 </script>
 
 <style scoped>
-.user-scroll-panel {
+.group-scroll-panel {
   box-sizing: border-box;
-  /*background-color: #2c3e50;*/
-  min-height: 100vh;
-  padding-top: 3rem;
+  min-height: 120vh;
 }
+
 main{
-  pading: 0 2rem;
-  max-width: 640px;
-  margin: 0 auto;
+  background-color: lightgray;
+  width: 565px;
+  margin: 2rem auto;
+  border-radius: 2rem;
 }
 </style>
