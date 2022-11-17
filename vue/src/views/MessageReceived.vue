@@ -1,7 +1,10 @@
 <template>
-Message Received
+  <div class="user-scroll-panel">
+    <main>
+      <PostPartner v-for="(anime, i) in anime_list" :key="i" :anime="anime"/>
+    </main>
+  </div>
 </template>
-
 
 
 
@@ -107,7 +110,6 @@ export default {
         }
 
       }
-
       return anime;
     },
     handleScroll() {
@@ -149,7 +151,6 @@ export default {
         })
       })
     }
-
 
 
   },

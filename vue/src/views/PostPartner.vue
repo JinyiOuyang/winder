@@ -61,6 +61,7 @@ export default {
 //   user_title: "user1",
 //   user_activities: {Tennis: Beginner, Soccer: Intermediate},
 // }
+
 </script>
 
 <style scoped>

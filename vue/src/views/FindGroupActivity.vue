@@ -92,14 +92,17 @@ export default {
         2005,
       ];
       const anime = [];
-      for (let i = 0; i < 1; i++ ){
-        if(state.tableData){
-          anime.push({
-            title: state.tableData[i].id,
-            description: state.tableData[i].time
-          })
-        }
-
+      for (let i = 0; i < anime_titles.length; i++) {
+        anime.push({
+          title: anime_titles[i],
+          sport: anime_sport[i],
+          experience: anime_exp[i],
+          time: anime_time[i],
+          location: anime_location[i],
+          size: anime_size[i],
+          createdBy: anime_createdBy[i],
+          id: anime_ids[i]
+        });
       }
 
       return anime;

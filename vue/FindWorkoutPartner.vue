@@ -94,6 +94,7 @@ export default {
               "Student",
           address: anime_address[i],
           id: anime_ids[i]
+
         });
       }
       return anime;
@@ -112,13 +113,18 @@ export default {
     this.anime_list = this.getAnime();
     window.addEventListener("scroll", this.handleScroll);
   },
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> 830d695b081a175e0fd633293866874bf29cfce2
 </script>
 
 
 <style scoped>
 .user-scroll-panel {
   box-sizing: border-box;
+<<<<<<< HEAD
   min-height: 120vh;
 }
 
@@ -128,5 +134,17 @@ main {
   /*pading: 2rem 2rem;*/
   margin: 2rem auto;
   border-radius: 2rem;
+=======
+  /*background-color: #2c3e50;*/
+  min-height: 100vh;
+  padding-top: 3rem;
+}
+
+main {
+  pading: 0 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+
+>>>>>>> 830d695b081a175e0fd633293866874bf29cfce2
 }
 </style>
