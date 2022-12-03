@@ -186,6 +186,7 @@ const anime_list = computed(() =>{
 //     })
 //   })
 // }
+
 </script>
 
 <style scoped>

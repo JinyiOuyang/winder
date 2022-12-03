@@ -3,6 +3,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import "./style.css";
 
+localStorage.setItem("link", 'home')
 </script>
 <template>
   <div id="app" >
